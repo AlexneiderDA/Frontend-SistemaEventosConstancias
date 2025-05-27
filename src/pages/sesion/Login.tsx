@@ -1,10 +1,15 @@
+// src/pages/sesion/Login.tsx
 import type React from "react"
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { useAuth } from "../../context/auth.context"
 import AuthLayout from "../../components/sesion/login/AuthLayout"
 import FormInput from "../../components/sesion/login/FormInput"
 
 const Login: React.FC = () => {
+  const navigate = useNavigate();
+  const { login, isLoading } = useAuth();
+  
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -12,6 +17,7 @@ const Login: React.FC = () => {
   const [errors, setErrors] = useState({
     email: "",
     password: "",
+    general: "",
   })
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,31 +31,80 @@ const Login: React.FC = () => {
       setErrors((prev) => ({
         ...prev,
         [id]: "",
+        general: "",
       }))
     }
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+
+    // Reset errors
+    setErrors({
+      email: "",
+      password: "",
+      general: "",
+    });
 
     // Simple validation
     const newErrors = {
       email: !formData.email ? "El correo electrónico es requerido" : "",
       password: !formData.password ? "La contraseña es requerida" : "",
+      general: "",
     }
 
     setErrors(newErrors)
 
-    // If no errors, proceed with login
-    if (!newErrors.email && !newErrors.password) {
-      console.log("Login with:", formData)
-      // Add your login logic here
+    // If validation errors, return
+    if (newErrors.email || newErrors.password) {
+      return;
+    }
+
+    try {
+      await login({
+        email: formData.email,
+        password: formData.password,
+      });
+      
+      // Redirigir al dashboard después del login exitoso
+      navigate('/user/inicio');
+    } catch (error: any) {
+      console.error('Error en login:', error);
+      
+      // Manejar diferentes tipos de errores
+      if (error.response?.status === 401) {
+        setErrors(prev => ({
+          ...prev,
+          general: "Credenciales incorrectas. Verifica tu email y contraseña."
+        }));
+      } else if (error.response?.status >= 500) {
+        setErrors(prev => ({
+          ...prev,
+          general: "Error del servidor. Por favor, intenta más tarde."
+        }));
+      } else if (error.response?.data?.error) {
+        setErrors(prev => ({
+          ...prev,
+          general: error.response.data.error
+        }));
+      } else {
+        setErrors(prev => ({
+          ...prev,
+          general: "Ocurrió un error inesperado. Por favor, intenta más tarde."
+        }));
+      }
     }
   }
 
   return (
     <AuthLayout title="Iniciar Sesión" subtitle="Ingresa tus credenciales para acceder a tu cuenta">
       <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+        {errors.general && (
+          <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded relative">
+            {errors.general}
+          </div>
+        )}
+
         <FormInput
           id="email"
           label="Correo Electrónico"
@@ -95,9 +150,17 @@ const Login: React.FC = () => {
         <div>
           <button
             type="submit"
-            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#1C8443] hover:bg-[#41AD49] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#8DC642] transition-all"
+            disabled={isLoading}
+            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#1C8443] hover:bg-[#41AD49] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#8DC642] transition-all disabled:bg-gray-400 disabled:cursor-not-allowed"
           >
-            Iniciar Sesión
+            {isLoading ? (
+              <>
+                <div className="animate-spin rounded-full h-4 w-4 border-t-2 border-b-2 border-white mr-2"></div>
+                Iniciando sesión...
+              </>
+            ) : (
+              'Iniciar Sesión'
+            )}
           </button>
         </div>
 

@@ -1,10 +1,15 @@
+// src/pages/sesion/Signup.tsx
 import type React from "react"
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { useAuth } from "../../context/auth.context"
 import AuthLayout from "../../components/sesion/login/AuthLayout"
 import FormInput from "../../components/sesion/login/FormInput"
 
 const Signup: React.FC = () => {
+  const navigate = useNavigate();
+  const { signup, isLoading } = useAuth();
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -17,7 +22,10 @@ const Signup: React.FC = () => {
     email: "",
     password: "",
     confirmPassword: "",
+    general: "",
   })
+
+  const [acceptTerms, setAcceptTerms] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target
@@ -30,44 +38,123 @@ const Signup: React.FC = () => {
       setErrors((prev) => ({
         ...prev,
         [id]: "",
+        general: "",
       }))
     }
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-
-    // Simple validation
+  const validateForm = () => {
     const newErrors = {
-      name: !formData.name ? "El nombre es requerido" : "",
-      email: !formData.email ? "El correo electrónico es requerido" : "",
-      password: !formData.password
-        ? "La contraseña es requerida"
-        : formData.password.length < 8
-          ? "La contraseña debe tener al menos 8 caracteres"
-          : "",
-      confirmPassword: !formData.confirmPassword
-        ? "Confirma tu contraseña"
-        : formData.password !== formData.confirmPassword
-          ? "Las contraseñas no coinciden"
-          : "",
+      name: !formData.name.trim() ? "El nombre es requerido" : 
+            formData.name.trim().length < 2 ? "El nombre debe tener al menos 2 caracteres" : "",
+      email: !formData.email ? "El correo electrónico es requerido" : 
+             !/\S+@\S+\.\S+/.test(formData.email) ? "El correo electrónico no es válido" : "",
+      password: !formData.password ? "La contraseña es requerida" : 
+                formData.password.length < 8 ? "La contraseña debe tener al menos 8 caracteres" :
+                !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(formData.password) ? 
+                "La contraseña debe contener al menos una letra minúscula, una mayúscula y un número" : "",
+      confirmPassword: !formData.confirmPassword ? "Confirma tu contraseña" : 
+                       formData.password !== formData.confirmPassword ? "Las contraseñas no coinciden" : "",
+      general: "",
     }
 
+    return newErrors;
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+    // Reset errors
+    setErrors({
+      name: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+      general: "",
+    });
+
+    // Validate form
+    const newErrors = validateForm();
     setErrors(newErrors)
 
     // Check if there are any errors
     const hasErrors = Object.values(newErrors).some((error) => error !== "")
 
-    // If no errors, proceed with signup
-    if (!hasErrors) {
-      console.log("Signup with:", formData)
-      // Add your signup logic here
+    // Check terms acceptance
+    if (!acceptTerms) {
+      setErrors(prev => ({
+        ...prev,
+        general: "Debes aceptar los términos y condiciones para continuar."
+      }));
+      return;
+    }
+
+    // If validation errors, return
+    if (hasErrors) {
+      return;
+    }
+
+    try {
+      await signup({
+        name: formData.name.trim(),
+        email: formData.email,
+        password: formData.password,
+        passwordConfirm: formData.confirmPassword,
+      });
+      
+      // Redirigir al dashboard después del registro exitoso
+      navigate('/user/inicio');
+    } catch (error: any) {
+      console.error('Error en signup:', error);
+      
+      // Manejar diferentes tipos de errores
+      if (error.response?.status === 409) {
+        setErrors(prev => ({
+          ...prev,
+          email: "Este correo electrónico ya está registrado.",
+          general: ""
+        }));
+      } else if (error.response?.status >= 500) {
+        setErrors(prev => ({
+          ...prev,
+          general: "Error del servidor. Por favor, intenta más tarde."
+        }));
+      } else if (error.response?.data?.details) {
+        // Manejar errores de validación del servidor
+        const serverErrors = error.response.data.details;
+        const newErrors = { ...errors };
+        
+        serverErrors.forEach((err: any) => {
+          if (err.path === 'name') newErrors.name = err.message;
+          else if (err.path === 'email') newErrors.email = err.message;
+          else if (err.path === 'password') newErrors.password = err.message;
+          else if (err.path === 'passwordConfirm') newErrors.confirmPassword = err.message;
+        });
+        
+        setErrors(newErrors);
+      } else if (error.response?.data?.error) {
+        setErrors(prev => ({
+          ...prev,
+          general: error.response.data.error
+        }));
+      } else {
+        setErrors(prev => ({
+          ...prev,
+          general: "Ocurrió un error inesperado. Por favor, intenta más tarde."
+        }));
+      }
     }
   }
 
   return (
     <AuthLayout title="Crear Cuenta" subtitle="Completa el formulario para registrarte">
       <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+        {errors.general && (
+          <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded relative">
+            {errors.general}
+          </div>
+        )}
+
         <FormInput
           id="name"
           label="Nombre Completo"
@@ -117,6 +204,8 @@ const Signup: React.FC = () => {
             id="terms"
             name="terms"
             type="checkbox"
+            checked={acceptTerms}
+            onChange={(e) => setAcceptTerms(e.target.checked)}
             className="h-4 w-4 text-[#41AD49] focus:ring-[#8DC642] border-gray-300 rounded"
             required
           />
@@ -135,9 +224,17 @@ const Signup: React.FC = () => {
         <div>
           <button
             type="submit"
-            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#1C8443] hover:bg-[#41AD49] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#8DC642] transition-all"
+            disabled={isLoading}
+            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#1C8443] hover:bg-[#41AD49] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#8DC642] transition-all disabled:bg-gray-400 disabled:cursor-not-allowed"
           >
-            Registrarse
+            {isLoading ? (
+              <>
+                <div className="animate-spin rounded-full h-4 w-4 border-t-2 border-b-2 border-white mr-2"></div>
+                Registrando...
+              </>
+            ) : (
+              'Registrarse'
+            )}
           </button>
         </div>
 
