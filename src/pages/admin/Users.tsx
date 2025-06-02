@@ -1,18 +1,16 @@
-"use client"
-
 import type React from "react"
 import { useState } from "react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 import { Plus, AlertTriangle } from "lucide-react"
-import { AdminLayout } from "@/components/layouts/AdminLayout"
-import { UserFiltersComponent } from "@/components/users/UserFilters"
-import { UserTable } from "@/components/users/UserTable"
-import { UserForm } from "@/components/users/UserForm"
-import { ResetPasswordDialog } from "@/components/users/ResetPasswordDialog"
-import { RoleManagement } from "@/components/users/RoleManagement"
-import { RoleForm } from "@/components/users/RoleForm"
-import { ExportOptions } from "@/components/users/ExportOptions"
+import { AdminLayout } from "@/components/admin/layouts/AdminLayout"
+import { UserFiltersComponent } from "@/components/admin/users/UserFilters"
+import { UserTable } from "@/components/admin/users/UserTable"
+import { UserForm } from "@/components/admin/users/UserForm"
+import { ResetPasswordDialog } from "@/components/admin/users/ResetPasswordDialog"
+import { RoleManagement } from "@/components/admin/users/RoleManagement"
+import { RoleForm } from "@/components/admin/users/RoleForm"
+import { ExportOptions } from "@/components/admin/users/ExportOptions"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -25,7 +23,6 @@ import {
 } from "@/components/ui/alert-dialog"
 import type { User, Role, Permission, UserFilters } from "@/types/user"
 
-// Datos de ejemplo
 const mockUsers: User[] = [
   {
     id: "1",

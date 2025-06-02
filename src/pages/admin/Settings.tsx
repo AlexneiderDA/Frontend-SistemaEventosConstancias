@@ -6,15 +6,14 @@ import { SettingsIcon, Sliders, Bell, Mail, Database, FileText, Clock, Shield, P
 import { Switch } from "@/components/ui/switch"
 import { Label } from "@/components/ui/label"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { AdminLayout } from "@/components/layouts/AdminLayout"
-import { SettingsForm } from "@/components/settings/SettingsForm"
-import { TaskScheduler } from "@/components/settings/TaskScheduler"
-import { BackupSettings } from "@/components/settings/BackupSettings"
-import { EmailSettings } from "@/components/settings/EmailSettings"
-import { LoggingSettings } from "@/components/settings/LoggingSettings"
+import { AdminLayout } from "@/components/admin/layouts/AdminLayout"
+import { SettingsForm } from "@/components/admin/settings/SettingsForm"
+import { TaskScheduler } from "@/components/admin/settings/TaskScheduler"
+import { BackupSettings } from "@/components/admin/settings/BackupSettings"
+import { EmailSettings } from "@/components/admin/settings/EmailSettings"
+import { LoggingSettings } from "@/components/admin/settings/LoggingSettings"
 import type { SystemSetting, ScheduledTask, BackupConfig, EmailConfig, LoggingConfig, TaskLog } from "@/types/settings"
 
-// Datos de ejemplo
 const mockGeneralSettings: SystemSetting[] = [
   {
     id: "1",

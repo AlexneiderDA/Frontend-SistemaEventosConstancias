@@ -2,15 +2,15 @@
 
 import type React from "react"
 import { useState } from "react"
-import { AdminLayout } from "@/components/layouts/AdminLayout"
-import { TemplateLibrary } from "@/components/certificates/TemplateLibrary"
-import { TemplateEditor } from "@/components/certificates/TemplateEditor"
-import { TemplatePreview } from "@/components/certificates/TemplatePreview"
-import { DefaultTemplateDialog } from "@/components/certificates/DefaultTemplateDialog"
-import { DeleteTemplateDialog } from "@/components/certificates/DeleteTemplateDialog"
+import { AdminLayout } from "@/components/admin/layouts/AdminLayout"
+import { TemplateLibrary } from "@/components/admin/certificates/TemplateLibrary"
+import { TemplateEditor } from "@/components/admin/certificates/TemplateEditor"
+import { TemplatePreview } from "@/components/admin/certificates/TemplatePreview"
+import { DefaultTemplateDialog } from "@/components/admin/certificates/DefaultTemplateDialog"
+import { DeleteTemplateDialog } from "@/components/admin/certificates/DeleteTemplateDialog"
 import type { CertificateTemplate, CertificateVariable, TemplateFilter } from "@/types/certificate"
 
-// Datos de ejemplo para las plantillas
+// Resto del archivo permanece igual...
 const mockTemplates: CertificateTemplate[] = [
   {
     id: "1",

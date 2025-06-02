@@ -16,12 +16,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Separator } from "@/components/ui/separator"
-import { AdminLayout } from "@/components/layouts/AdminLayout"
-import { StatCard } from "@/components/ui/StatCard"
-import { AlertItem } from "@/components/ui/AlertItem"
-import { PerformanceIndicator } from "@/components/ui/PerformanceIndicator"
-import { QuickAccessButton } from "@/components/ui/QuickAccessButton"
+import { AdminLayout } from "@/components/admin/layouts/AdminLayout"
+import { StatCard } from "@/components/admin/ui/StatCard"
+import { AlertItem } from "@/components/admin/ui/AlertItem"
+import { PerformanceIndicator } from "@/components/admin/ui/PerformanceIndicator"
+import { QuickAccessButton } from "@/components/admin/ui/QuickAccessButton"
 
+// Resto del archivo permanece igual...
 export const Dashboard: React.FC = () => {
   return (
     <AdminLayout title="Dashboard">

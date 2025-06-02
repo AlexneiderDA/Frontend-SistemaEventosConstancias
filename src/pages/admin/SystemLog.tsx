@@ -3,18 +3,18 @@
 import type React from "react"
 import { useState, useEffect } from "react"
 import { RefreshCw, BarChart } from "lucide-react"
-import { AdminLayout } from "@/components/layouts/AdminLayout"
+import { AdminLayout } from "@/components/admin/layouts/AdminLayout"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { LogFilters } from "@/components/system-log/LogFilters"
-import { LogTable } from "@/components/system-log/LogTable"
-import { LogDetails } from "@/components/system-log/LogDetails"
-import { LogStats } from "@/components/system-log/LogStats"
-import { MaintenanceTools } from "@/components/system-log/MaintenanceTools"
-import { ExportOptions } from "@/components/system-log/ExportOptions"
+import { LogFilters } from "@/components/admin/system-log/LogFilters"
+import { LogTable } from "@/components/admin/system-log/LogTable"
+import { LogDetails } from "@/components/admin/system-log/LogDetails"
+import { LogStats } from "@/components/admin/system-log/LogStats"
+import { MaintenanceTools } from "@/components/admin/system-log/MaintenanceTools"
+import { ExportOptions } from "@/components/admin/system-log/ExportOptions"
 import type { SystemLogEntry, SystemLogFilter, SystemLogStats } from "@/types/system-log"
 
-// Datos de ejemplo
+// Resto del archivo permanece igual...
 const mockUsers = [
   { id: "1", name: "Admin Usuario" },
   { id: "2", name: "Juan Pérez" },

@@ -2,12 +2,12 @@
 
 import type React from "react"
 import { useState } from "react"
-import { AdminLayout } from "@/components/layouts/AdminLayout"
-import { TemplatesList } from "@/components/email-templates/TemplatesList"
-import { TemplateEditor } from "@/components/email-templates/TemplateEditor"
-import { VariablesPanel } from "@/components/email-templates/VariablesPanel"
-import { TestEmailDialog } from "@/components/email-templates/TestEmailDialog"
-import { DeleteTemplateDialog } from "@/components/email-templates/DeleteTemplateDialog"
+import { AdminLayout } from "@/components/admin/layouts/AdminLayout"
+import { TemplatesList } from "@/components/admin/email-templates/TemplatesList"
+import { TemplateEditor } from "@/components/admin/email-templates/TemplateEditor"
+import { VariablesPanel } from "@/components/admin/email-templates/VariablesPanel"
+import { TestEmailDialog } from "@/components/admin/email-templates/TestEmailDialog"
+import { DeleteTemplateDialog } from "@/components/admin/email-templates/DeleteTemplateDialog"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, Send } from "lucide-react"
 import type {
@@ -17,7 +17,7 @@ import type {
   SendTestEmailResponse,
 } from "@/types/email-template"
 
-// Datos de ejemplo para las plantillas
+// Resto del archivo permanece igual...
 const mockTemplates: EmailTemplate[] = [
   {
     id: "1",

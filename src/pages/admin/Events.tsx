@@ -3,14 +3,14 @@
 import type React from "react"
 import { useState } from "react"
 import { Plus, AlertTriangle, FileText, Download, Trash2, Edit } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { AdminLayout } from "@/components/layouts/AdminLayout"
-import { EventsTable } from "@/components/events/EventsTable"
-import { EventFiltersComponent } from "@/components/events/EventFilters"
-import { EventForm } from "@/components/events/EventForm"
-import { TransferOwnershipDialog } from "@/components/events/TransferOwnershipDialog"
-import { BulkEditDialog, type BulkEditChanges } from "@/components/events/BulkEditDialog"
-import { EventStatsComponent } from "@/components/events/EventStats"
+import { Button } from "../../components/ui/button"
+import { AdminLayout } from "../../components/admin/layouts/AdminLayout"
+import { EventsTable } from "../../components/admin/events/EventsTable"
+import { EventFiltersComponent } from "../../components/admin/events/EventFilters"
+import { EventForm } from "../../components/admin/events/EventForm"
+import { TransferOwnershipDialog } from "../../components/admin/events/TransferOwnershipDialog"
+import { BulkEditDialog, type BulkEditChanges } from "../../components/admin/events/BulkEditDialog"
+import { EventStatsComponent } from "../../components/admin/events/EventStats"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -20,11 +20,10 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-} from "@/components/ui/alert-dialog"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import type { Event, EventFilters, EventTag, Organizer, EventStats } from "@/types/event"
+} from "../../components/ui/alert-dialog"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../../components/ui/dropdown-menu"
+import type { Event, EventFilters, EventTag, Organizer, EventStats } from "../../types/event"
 
-// Datos de ejemplo
 const mockEvents: Event[] = [
   {
     id: "1",
