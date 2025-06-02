@@ -328,7 +328,7 @@ export const SystemLog: React.FC = () => {
     })
   }
 
-  const handleExportAllLogs = () => {
+  const handleExportAllLogs = async (): Promise<void> => {
     console.log("Exportando todos los registros")
     // En una aplicación real, aquí se generaría y descargaría el archivo
     alert(`${logs.length} registros exportados correctamente.`)

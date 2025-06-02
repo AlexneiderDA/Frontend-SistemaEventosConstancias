@@ -432,7 +432,7 @@ export const CertificateTemplates: React.FC = () => {
       // Si es la plantilla que estamos configurando como predeterminada
       if (t.id === template.id) {
         // Combinar los tipos de eventos existentes con los nuevos
-        const combinedTypes = [...new Set([...t.eventTypes, ...forEventTypes])]
+        const combinedTypes = Array.from(new Set([...t.eventTypes, ...forEventTypes]))
         return {
           ...t,
           eventTypes: combinedTypes,

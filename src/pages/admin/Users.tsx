@@ -214,8 +214,8 @@ export const Users: React.FC = () => {
     })
     .sort((a, b) => {
       // Ordenar por columna seleccionada
-      const aValue = a[sortColumn as keyof User]
-      const bValue = b[sortColumn as keyof User]
+      const aValue = a[sortColumn as keyof User] ?? ""
+      const bValue = b[sortColumn as keyof User] ?? ""
 
       if (aValue < bValue) {
         return sortDirection === "asc" ? -1 : 1

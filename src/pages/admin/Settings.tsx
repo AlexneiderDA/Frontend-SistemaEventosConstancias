@@ -591,7 +591,13 @@ const mockLoggingConfig: LoggingConfig = {
   enableRemoteLogging: false,
 }
 
-const mockLogFiles = [
+const mockLogFiles: {
+  id: string
+  name: string
+  size: string
+  date: string
+  type: "error" | "system" | "debug" | "access"
+}[] = [
   {
     id: "1",
     name: "error.log",
