@@ -3,15 +3,27 @@
 import type React from "react"
 import { useState } from "react"
 import { Search, ChevronDown, ChevronRight, Info, Check, X } from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { Badge } from "@/components/ui/badge"
-import { Separator } from "@/components/ui/separator"
-import type { Module, RoleWithPermissions } from "@/types/role"
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "../../ui/card"
+import { Input } from "../../ui/input"
+import { Button } from "../../ui/button"
+import { Checkbox } from "../../ui/checkbox"
+import { ScrollArea } from "../../ui/scroll-area"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../../ui/tooltip"
+import { Badge } from "../../ui/badge"
+import { Separator } from "../../ui/separator"
+import type { Module, RoleWithPermissions } from "../../../types/role"
+
 
 interface PermissionsMatrixProps {
   role: RoleWithPermissions | null

@@ -2,9 +2,9 @@
 
 import type React from "react"
 import { Search, Filter, X, Tag } from "lucide-react"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
+import { Input } from "../../ui/input"
+import { Button } from "../../ui/button"
+import { Label } from "../../ui/label"
 import {
   Select,
   SelectContent,
@@ -13,14 +13,15 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-import { Calendar } from "@/components/ui/calendar"
-import { Badge } from "@/components/ui/badge"
-import { Switch } from "@/components/ui/switch"
-import { Separator } from "@/components/ui/separator"
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command"
-import type { EventFilters, EventTag, Organizer } from "@/types/event"
+} from "../../ui/select"
+import { Popover, PopoverContent, PopoverTrigger } from "../../ui/popover"
+// import { Calendar } from "@/components/ui/calendar"
+import { Calendar } from "../../ui/calendar"
+import { Badge } from "../../ui/badge"
+import { Switch } from "../../ui/switch"
+import { Separator } from "../../ui/separator"
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "../../ui/command"
+import type { EventFilters, EventTag, Organizer } from "../../../types/event"
 
 interface EventFiltersProps {
   filters: EventFilters
@@ -57,21 +58,21 @@ export const EventFiltersComponent: React.FC<EventFiltersProps> = ({
     onFilterChange({ ...filters, organizer: value })
   }
 
-  const handleDateFromChange = (date: Date | null) => {
+  const handleDateFromChange = (date: Date | undefined) => {
     onFilterChange({
       ...filters,
-      dateRange: { ...filters.dateRange, from: date },
+      dateRange: { ...filters.dateRange, from: date ?? null },
     })
   }
 
-  const handleDateToChange = (date: Date | null) => {
+  const handleDateToChange = (date: Date | undefined) => {
     onFilterChange({
       ...filters,
-      dateRange: { ...filters.dateRange, to: date },
+      dateRange: { ...filters.dateRange, to: date ?? null },
     })
   }
 
-  const handlePublishedChange = (checked: boolean) => {
+  const handlePublishedChange = (checked: boolean | null) => {
     onFilterChange({
       ...filters,
       isPublished: checked === true ? true : checked === false ? false : null,

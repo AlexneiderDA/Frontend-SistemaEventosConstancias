@@ -9,10 +9,11 @@ import {
   DialogHeader,
   DialogTitle,
   DialogClose,
-} from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import type { SystemLogEntry } from "@/types/system-log"
+} from "../../ui/dialog"
+import { Button } from "../../ui/button"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../ui/tabs"
+import type { SystemLogEntry } from "../../../types/system-log"
+
 
 interface LogDetailsProps {
   log: SystemLogEntry | null

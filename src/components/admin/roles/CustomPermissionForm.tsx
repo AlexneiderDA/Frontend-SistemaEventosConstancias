@@ -8,11 +8,11 @@ import {
   DialogTitle,
   DialogFooter,
   DialogDescription,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Button } from "@/components/ui/button"
-import { Textarea } from "@/components/ui/textarea"
+} from "../../ui/dialog"
+import { Input } from "../../ui/input"
+import { Label } from "../../ui/label"
+import { Button } from "../../ui/button"
+import { Textarea } from "../../ui/textarea"
 import {
   Select,
   SelectContent,
@@ -21,8 +21,9 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import type { Permission, Module } from "@/types/role"
+} from "../../ui/select"
+import type { Permission, Module } from "../../../types/role"
+
 
 interface CustomPermissionFormProps {
   isOpen: boolean

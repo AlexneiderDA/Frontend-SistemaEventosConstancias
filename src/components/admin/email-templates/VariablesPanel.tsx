@@ -1,10 +1,21 @@
 "use client"
 
 import type React from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Button } from "@/components/ui/button"
-import type { EmailVariable } from "@/types/email-template"
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "../../ui/card"
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../../ui/tabs"
+import { Button } from "../../ui/button"
+import type { EmailVariable } from "../../../types/email-template"
+
 
 interface VariablesPanelProps {
   onInsertVariable: (variable: string) => void
@@ -118,7 +129,7 @@ export const VariablesPanel: React.FC<VariablesPanelProps> = ({ onInsertVariable
               </div>
               
               <div className="text-xs text-muted-foreground">
-                <p>Para usar estas variables, insértalas en tu plantilla con el formato {{'{{\'}}variable{\'}}'}}.</p>\
+                <p>Para usar estas variables, insértalas en tu plantilla con el formato <code>{'{{variable}}'}</code>.</p>
               </div>
             </TabsContent>
           ))}

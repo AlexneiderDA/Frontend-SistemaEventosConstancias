@@ -2,13 +2,14 @@
 
 import type React from "react"
 import { useState } from "react"
-import { AdminLayout } from "@/components/admin/layouts/AdminLayout"
-import { TemplateLibrary } from "@/components/admin/certificates/TemplateLibrary"
-import { TemplateEditor } from "@/components/admin/certificates/TemplateEditor"
-import { TemplatePreview } from "@/components/admin/certificates/TemplatePreview"
-import { DefaultTemplateDialog } from "@/components/admin/certificates/DefaultTemplateDialog"
-import { DeleteTemplateDialog } from "@/components/admin/certificates/DeleteTemplateDialog"
-import type { CertificateTemplate, CertificateVariable, TemplateFilter } from "@/types/certificate"
+import { AdminLayout } from "../../components/admin/layouts/AdminLayout"
+import { TemplateLibrary } from "../../components/admin/certificates/TemplateLibrary"
+import { TemplateEditor } from "../../components/admin/certificates/TemplateEditor"
+import { TemplatePreview } from "../../components/admin/certificates/TemplatePreview"
+import { DefaultTemplateDialog } from "../../components/admin/certificates/DefaultTemplateDialog"
+import { DeleteTemplateDialog } from "../../components/admin/certificates/DeleteTemplateDialog"
+import type { CertificateTemplate, CertificateVariable, TemplateFilter } from "../../types/certificate"
+
 
 // Resto del archivo permanece igual...
 const mockTemplates: CertificateTemplate[] = [

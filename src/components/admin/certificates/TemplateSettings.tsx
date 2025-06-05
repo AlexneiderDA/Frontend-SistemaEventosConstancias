@@ -2,13 +2,25 @@
 
 import type React from "react"
 import { Settings, Grid, Ruler, FileText } from "lucide-react"
-import { Label } from "@/components/ui/label"
-import { Switch } from "@/components/ui/switch"
-import { Slider } from "@/components/ui/slider"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Input } from "@/components/ui/input"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import type { TemplateEditorSettings } from "@/types/certificate"
+import { Label } from "../../ui/label"
+import { Switch } from "../../ui/switch"
+import { Slider } from "../../ui/slider"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../../ui/select"
+import { Input } from "../../ui/input"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../../ui/accordion"
+import type { TemplateEditorSettings } from "../../../types/certificate"
+
 
 interface TemplateSettingsProps {
   settings: TemplateEditorSettings

@@ -2,13 +2,14 @@
 
 import type React from "react"
 import { Edit, Trash2, Plus } from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Label } from "@/components/ui/label"
-import { Separator } from "@/components/ui/separator"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import type { Role, Permission } from "@/types/user"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../../ui/card"
+import { Button } from "../../ui/button"
+import { Checkbox } from "../../ui/checkbox"
+import { Label } from "../../ui/label"
+import { Separator } from "../../ui/separator"
+import { ScrollArea } from "../../ui/scroll-area"
+import type { Role, Permission } from "../../../types/user"
+
 
 interface RoleManagementProps {
   roles: Role[]

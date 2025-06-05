@@ -3,20 +3,40 @@
 import type React from "react"
 import { useState, useEffect } from "react"
 import { CalendarIcon, Check, ChevronsUpDown } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Switch } from "@/components/ui/switch"
-import { Calendar } from "@/components/ui/calendar"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Checkbox } from "@/components/ui/checkbox"
+import { Button } from "../../ui/button"
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "../../ui/card"
+import { Input } from "../../ui/input"
+import { Label } from "../../ui/label"
+import { Switch } from "../../ui/switch"
+import { Calendar } from "../../ui/calendar"
+import { Popover, PopoverContent, PopoverTrigger } from "../../ui/popover"
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "../../ui/command"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../../ui/select"
+import { Checkbox } from "../../ui/checkbox"
 import { format } from "date-fns"
 import { es } from "date-fns/locale"
-import { cn } from "@/lib/utils"
-import type { Report, ReportParameter } from "@/types/report"
+import { cn } from "../../../lib/utils"
+import type { Report, ReportParameter } from "../../../types/report"
+
 
 interface ParameterFormProps {
   report: Report

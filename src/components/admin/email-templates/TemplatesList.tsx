@@ -3,10 +3,17 @@
 import type React from "react"
 import { useState } from "react"
 import { Search, Plus, Mail, Check, X, Copy, Trash, Edit } from "lucide-react"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Badge } from "@/components/ui/badge"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "../../ui/card"
+import { Button } from "../../ui/button"
+import { Input } from "../../ui/input"
+import { Badge } from "../../ui/badge"
 import {
   Select,
   SelectContent,
@@ -15,8 +22,9 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import type { EmailTemplate, EmailTemplateType } from "@/types/email-template"
+} from "../../ui/select"
+import type { EmailTemplate, EmailTemplateType } from "../../../types/email-template"
+
 
 interface TemplatesListProps {
   templates: EmailTemplate[]

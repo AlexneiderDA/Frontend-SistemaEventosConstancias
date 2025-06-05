@@ -3,16 +3,17 @@
 import type React from "react"
 import { useState } from "react"
 import { SettingsIcon, Sliders, Bell, Mail, Database, FileText, Clock, Shield, Palette } from "lucide-react"
-import { Switch } from "@/components/ui/switch"
-import { Label } from "@/components/ui/label"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { AdminLayout } from "@/components/admin/layouts/AdminLayout"
-import { SettingsForm } from "@/components/admin/settings/SettingsForm"
-import { TaskScheduler } from "@/components/admin/settings/TaskScheduler"
-import { BackupSettings } from "@/components/admin/settings/BackupSettings"
-import { EmailSettings } from "@/components/admin/settings/EmailSettings"
-import { LoggingSettings } from "@/components/admin/settings/LoggingSettings"
-import type { SystemSetting, ScheduledTask, BackupConfig, EmailConfig, LoggingConfig, TaskLog } from "@/types/settings"
+import { Switch } from "../../components/ui/switch"
+import { Label } from "../../components/ui/label"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs"
+import { AdminLayout } from "../../components/admin/layouts/AdminLayout"
+import { SettingsForm } from "../../components/admin/settings/SettingsForm"
+import { TaskScheduler } from "../../components/admin/settings/TaskScheduler"
+import { BackupSettings } from "../../components/admin/settings/BackupSettings"
+import { EmailSettings } from "../../components/admin/settings/EmailSettings"
+import { LoggingSettings } from "../../components/admin/settings/LoggingSettings"
+import type { SystemSetting, ScheduledTask, BackupConfig, EmailConfig, LoggingConfig, TaskLog } from "../../types/settings"
+
 
 const mockGeneralSettings: SystemSetting[] = [
   {

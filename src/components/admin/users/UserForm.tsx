@@ -8,11 +8,11 @@ import {
   DialogTitle,
   DialogFooter,
   DialogDescription,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Button } from "@/components/ui/button"
-import { Switch } from "@/components/ui/switch"
+} from "../../ui/dialog"
+import { Input } from "../../ui/input"
+import { Label } from "../../ui/label"
+import { Button } from "../../ui/button"
+import { Switch } from "../../ui/switch"
 import {
   Select,
   SelectContent,
@@ -21,8 +21,10 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import type { User } from "@/types/user"
+} from "../../ui/select"
+import type { User } from "../../../types/user"
+
+type UserFormState = Partial<User> & { password?: string }
 
 interface UserFormProps {
   isOpen: boolean
@@ -34,7 +36,7 @@ interface UserFormProps {
 }
 
 export const UserForm: React.FC<UserFormProps> = ({ isOpen, onClose, user, roles, departments, onSubmit }) => {
-  const [formData, setFormData] = React.useState<Partial<User>>(user || {})
+  const [formData, setFormData] = React.useState<UserFormState>(user || {})
   const [errors, setErrors] = React.useState<Record<string, string>>({})
 
   useEffect(() => {

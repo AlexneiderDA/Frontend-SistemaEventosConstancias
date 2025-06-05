@@ -11,8 +11,8 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-} from "@/components/ui/alert-dialog"
-import type { CertificateTemplate } from "@/types/certificate"
+} from "../../ui/alert-dialog"
+import type { CertificateTemplate } from "../../../types/certificate"
 
 interface DeleteTemplateDialogProps {
   isOpen: boolean

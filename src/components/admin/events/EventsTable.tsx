@@ -16,19 +16,31 @@ import {
   FileText,
   Share2,
 } from "lucide-react"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "../../ui/table"
+import { Button } from "../../ui/button"
+import { Badge } from "../../ui/badge"
+import { Checkbox } from "../../ui/checkbox"
+import { Avatar, AvatarFallback, AvatarImage } from "../../ui/avatar"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+} from "../../ui/dropdown-menu"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../../ui/tooltip"
 import {
   Pagination,
   PaginationContent,
@@ -37,8 +49,9 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@/components/ui/pagination"
-import type { Event } from "@/types/event"
+} from "../../ui/pagination"
+import type { Event } from "../../../types/event"
+
 
 interface EventsTableProps {
   events: Event[]

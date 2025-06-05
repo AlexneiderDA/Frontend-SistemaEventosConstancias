@@ -3,14 +3,15 @@
 import type React from "react"
 import { useState } from "react"
 import { Search, Filter, Calendar, User, Activity, Package, RefreshCw } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-import { Calendar as CalendarComponent } from "@/components/ui/calendar"
-import { Badge } from "@/components/ui/badge"
-import type { SystemLogFilter } from "@/types/system-log"
+import { Button } from "../../ui/button"
+import { Input } from "../../ui/input"
+import { Label } from "../../ui/label"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../../ui/select"
+import { Popover, PopoverContent, PopoverTrigger } from "../../ui/popover"
+import { Calendar as CalendarComponent } from "../../ui/calendar"
+import { Badge } from "../../ui/badge"
+import type { SystemLogFilter } from "../../../types/system-log"
+
 
 interface LogFiltersProps {
   filters: SystemLogFilter

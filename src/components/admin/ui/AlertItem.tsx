@@ -1,7 +1,7 @@
 import type React from "react"
 import { AlertTriangle, Bell } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
-import type { AlertItemProps } from "@/types/dashboard"
+import { Badge } from "../../ui/badge"
+import type { AlertItemProps } from "../../../types/dashboard"
 
 export const AlertItem: React.FC<AlertItemProps> = ({ type, message, time }) => {
   const getAlertStyles = () => {

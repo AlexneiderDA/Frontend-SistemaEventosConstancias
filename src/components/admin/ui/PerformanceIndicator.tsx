@@ -1,6 +1,6 @@
 import type React from "react"
-import { Progress } from "@/components/ui/progress"
-import type { PerformanceIndicatorProps } from "@/types/dashboard"
+import { Progress } from "../../ui/progress"
+import type { PerformanceIndicatorProps } from "../../../types/dashboard"
 
 export const PerformanceIndicator: React.FC<PerformanceIndicatorProps> = ({ label, value, color }) => {
   return (

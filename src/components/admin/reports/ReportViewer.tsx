@@ -3,10 +3,31 @@
 import type React from "react"
 import { useState } from "react"
 import { Download, Printer, Send, Calendar, RefreshCw } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import {
+  Button,
+} from "../../ui/button"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "../../ui/card"
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../../ui/tabs"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "../../ui/table"
 import {
   BarChart,
   Bar,
@@ -26,9 +47,10 @@ import {
 } from "recharts"
 import { format } from "date-fns"
 import { es } from "date-fns/locale"
-import type { Report, ReportData, ReportColumn } from "@/types/report"
+import type { Report, ReportData, ReportColumn } from "../../../types/report"
 import { ExportReportDialog } from "./ExportReportDialog"
 import { ScheduleReportDialog } from "./ScheduleReportDialog"
+
 
 interface ReportViewerProps {
   report: Report

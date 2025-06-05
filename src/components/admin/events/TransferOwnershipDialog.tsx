@@ -9,14 +9,15 @@ import {
   DialogTitle,
   DialogFooter,
   DialogDescription,
-} from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+} from "../../ui/dialog"
+import { Button } from "../../ui/button"
+import { Label } from "../../ui/label"
+import { Avatar, AvatarFallback, AvatarImage } from "../../ui/avatar"
 import { Search } from "lucide-react"
-import { Input } from "@/components/ui/input"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import type { Event, Organizer } from "@/types/event"
+import { Input } from "../../ui/input"
+import { ScrollArea } from "../../ui/scroll-area"
+import type { Event, Organizer } from "../../../types/event"
+
 
 interface TransferOwnershipDialogProps {
   isOpen: boolean

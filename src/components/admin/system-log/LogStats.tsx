@@ -1,8 +1,9 @@
 import type React from "react"
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from "recharts"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import type { SystemLogStats } from "@/types/system-log"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../ui/card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../ui/tabs"
+import type { SystemLogStats } from "../../../types/system-log"
+
 
 interface LogStatsProps {
   stats: SystemLogStats

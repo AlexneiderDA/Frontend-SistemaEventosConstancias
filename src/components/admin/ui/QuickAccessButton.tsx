@@ -1,8 +1,8 @@
 "use client"
 
 import type React from "react"
-import { Button } from "@/components/ui/button"
-import type { QuickAccessButtonProps } from "@/types/dashboard"
+import { Button } from "../../ui/button"
+import type { QuickAccessButtonProps } from "../../../types/dashboard"
 
 export const QuickAccessButton: React.FC<QuickAccessButtonProps> = ({ icon, label, color, onClick }) => {
   return (

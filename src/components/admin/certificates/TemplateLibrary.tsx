@@ -3,13 +3,24 @@
 import type React from "react"
 import { useState } from "react"
 import { Search, Filter, SortAsc, SortDesc, Plus, MoreHorizontal } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Switch } from "@/components/ui/switch"
-import { Label } from "@/components/ui/label"
-import type { CertificateTemplate, TemplateFilter } from "@/types/certificate"
+import { Button } from "../../ui/button"
+import { Input } from "../../ui/input"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "../../ui/dropdown-menu"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../../ui/select"
+import { Switch } from "../../ui/switch"
+import { Label } from "../../ui/label"
+import type { CertificateTemplate, TemplateFilter } from "../../../types/certificate"
 
 interface TemplateLibraryProps {
   templates: CertificateTemplate[]

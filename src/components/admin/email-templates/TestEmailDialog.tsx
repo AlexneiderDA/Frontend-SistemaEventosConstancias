@@ -2,9 +2,9 @@
 
 import type React from "react"
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { Button } from "../../ui/button"
+import { Input } from "../../ui/input"
+import { Label } from "../../ui/label"
 import {
   Dialog,
   DialogContent,
@@ -12,10 +12,11 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog"
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+} from "../../ui/dialog"
+import { Alert, AlertDescription, AlertTitle } from "../../ui/alert"
 import { AlertCircle, Loader2 } from "lucide-react"
-import type { EmailPreviewData, SendTestEmailResponse } from "@/types/email-template"
+import type { EmailPreviewData, SendTestEmailResponse } from "../../../types/email-template"
+
 
 interface TestEmailDialogProps {
   isOpen: boolean

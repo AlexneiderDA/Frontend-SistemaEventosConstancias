@@ -8,12 +8,13 @@ import {
   DialogTitle,
   DialogFooter,
   DialogDescription,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Button } from "@/components/ui/button"
-import { Textarea } from "@/components/ui/textarea"
-import type { Role } from "@/types/role"
+} from "../../ui/dialog"
+import { Input } from "../../ui/input"
+import { Label } from "../../ui/label"
+import { Button } from "../../ui/button"
+import { Textarea } from "../../ui/textarea"
+import type { Role } from "../../../types/role"
+
 
 interface RoleFormProps {
   isOpen: boolean

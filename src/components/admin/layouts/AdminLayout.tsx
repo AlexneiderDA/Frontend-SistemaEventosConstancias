@@ -16,9 +16,9 @@ import {
   Bell,
   Shield,
 } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Input } from "@/components/ui/input"
+import { Button } from "../../ui/button"
+import { Avatar, AvatarFallback, AvatarImage } from "../../ui/avatar"
+import { Input } from "../../ui/input"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -26,7 +26,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "../../ui/dropdown-menu"
+
 
 interface AdminLayoutProps {
   children: React.ReactNode

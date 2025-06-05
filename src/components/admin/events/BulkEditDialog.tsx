@@ -9,10 +9,10 @@ import {
   DialogTitle,
   DialogFooter,
   DialogDescription,
-} from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
-import { Checkbox } from "@/components/ui/checkbox"
+} from "../../ui/dialog"
+import { Button } from "../../ui/button"
+import { Label } from "../../ui/label"
+import { Checkbox } from "../../ui/checkbox"
 import {
   Select,
   SelectContent,
@@ -21,9 +21,10 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import { Switch } from "@/components/ui/switch"
-import type { EventType, EventStatus, EventTag } from "@/types/event"
+} from "../../ui/select"
+import { Switch } from "../../ui/switch"
+import type { EventType, EventStatus, EventTag } from "../../../types/event"
+
 
 interface BulkEditDialogProps {
   isOpen: boolean

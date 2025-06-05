@@ -3,16 +3,17 @@
 import type React from "react"
 import { useState, useEffect } from "react"
 import { RefreshCw, BarChart } from "lucide-react"
-import { AdminLayout } from "@/components/admin/layouts/AdminLayout"
-import { Button } from "@/components/ui/button"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { LogFilters } from "@/components/admin/system-log/LogFilters"
-import { LogTable } from "@/components/admin/system-log/LogTable"
-import { LogDetails } from "@/components/admin/system-log/LogDetails"
-import { LogStats } from "@/components/admin/system-log/LogStats"
-import { MaintenanceTools } from "@/components/admin/system-log/MaintenanceTools"
-import { ExportOptions } from "@/components/admin/system-log/ExportOptions"
-import type { SystemLogEntry, SystemLogFilter, SystemLogStats } from "@/types/system-log"
+import { AdminLayout } from "../../components/admin/layouts/AdminLayout"
+import { Button } from "../../components/ui/button"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs"
+import { LogFilters } from "../../components/admin/system-log/LogFilters"
+import { LogTable } from "../../components/admin/system-log/LogTable"
+import { LogDetails } from "../../components/admin/system-log/LogDetails"
+import { LogStats } from "../../components/admin/system-log/LogStats"
+import { MaintenanceTools } from "../../components/admin/system-log/MaintenanceTools"
+import { ExportOptions } from "../../components/admin/system-log/ExportOptions"
+import type { SystemLogEntry, SystemLogFilter, SystemLogStats } from "../../types/system-log"
+
 
 // Resto del archivo permanece igual...
 const mockUsers = [

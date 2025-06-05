@@ -10,14 +10,21 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import type { ReportExportOptions } from "@/types/report"
+} from "../../ui/dialog"
+import { Button } from "../../ui/button"
+import { Label } from "../../ui/label"
+import { Input } from "../../ui/input"
+import { RadioGroup, RadioGroupItem } from "../../ui/radio-group"
+import { Checkbox } from "../../ui/checkbox"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../../ui/select"
+import type { ReportExportOptions } from "../../../types/report"
+
 
 interface ExportReportDialogProps {
   open: boolean

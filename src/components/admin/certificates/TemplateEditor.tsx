@@ -22,11 +22,11 @@ import {
   PanelRight,
   ChevronLeft,
 } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Separator } from "@/components/ui/separator"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Slider } from "@/components/ui/slider"
+import { Button } from "../../ui/button"
+import { Input } from "../../ui/input"
+import { Separator } from "../../ui/separator"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../ui/tabs"
+import { Slider } from "../../ui/slider"
 import { VariablesPanel } from "./VariablesPanel"
 import { TemplatePreview } from "./TemplatePreview"
 import { TemplateSettings } from "./TemplateSettings"
@@ -35,7 +35,8 @@ import type {
   CertificateVariable,
   TemplateEditorState,
   TemplateEditorSettings,
-} from "@/types/certificate"
+} from "../../../types/certificate"
+
 
 interface TemplateEditorProps {
   template: CertificateTemplate

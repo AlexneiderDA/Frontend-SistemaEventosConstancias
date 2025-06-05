@@ -1,7 +1,7 @@
 import type React from "react"
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import type { StatCardProps } from "@/types/dashboard"
+import { Card } from "../../ui/card"
+import { Badge } from "../../ui/badge"
+import type { StatCardProps } from "../../../types/dashboard"
 
 export const StatCard: React.FC<StatCardProps> = ({ title, value, change, icon }) => {
   return (

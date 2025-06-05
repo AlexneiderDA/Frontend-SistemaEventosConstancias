@@ -3,9 +3,16 @@
 import type React from "react"
 import { useState } from "react"
 import { Download, ChevronLeft, ChevronRight, User } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import type { CertificateTemplate } from "@/types/certificate"
+import { Button } from "../../ui/button"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../../ui/select"
+import type { CertificateTemplate } from "../../../types/certificate"
+
 
 interface TemplatePreviewProps {
   template: CertificateTemplate

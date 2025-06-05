@@ -2,9 +2,9 @@
 
 import type React from "react"
 import { Search, Filter, X } from "lucide-react"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
+import { Input } from "../../ui/input"
+import { Button } from "../../ui/button"
+import { Label } from "../../ui/label"
 import {
   Select,
   SelectContent,
@@ -13,11 +13,11 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-import { Calendar } from "@/components/ui/calendar"
-import { Badge } from "@/components/ui/badge"
-import type { UserFilters } from "@/types/user"
+} from "../../ui/select"
+import { Popover, PopoverContent, PopoverTrigger } from "../../ui/popover"
+import { Calendar } from "../../ui/calendar"
+import { Badge } from "../../ui/badge"
+import type { UserFilters } from "../../../types/user"
 
 interface UserFiltersProps {
   filters: UserFilters
@@ -50,17 +50,17 @@ export const UserFiltersComponent: React.FC<UserFiltersProps> = ({
     onFilterChange({ ...filters, status: value })
   }
 
-  const handleDateFromChange = (date: Date | null) => {
+  const handleDateFromChange = (date: Date | undefined) => {
     onFilterChange({
       ...filters,
-      dateRange: { ...filters.dateRange, from: date },
+      dateRange: { ...filters.dateRange, from: date ?? null },
     })
   }
 
-  const handleDateToChange = (date: Date | null) => {
+  const handleDateToChange = (date: Date | undefined) => {
     onFilterChange({
       ...filters,
-      dateRange: { ...filters.dateRange, to: date },
+      dateRange: { ...filters.dateRange, to: date ?? null },
     })
   }
 

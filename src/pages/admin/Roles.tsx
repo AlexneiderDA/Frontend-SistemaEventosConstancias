@@ -3,14 +3,14 @@
 import type React from "react"
 import { useState, useEffect } from "react"
 import { Plus, AlertTriangle, Layers, Shield, FileText, Edit, Trash2 } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { AdminLayout } from "@/components/admin/layouts/AdminLayout"
-import { RolesList } from "@/components/admin/roles/RolesList"
-import { PermissionsMatrix } from "@/components/admin/roles/PermissionsMatrix"
-import { RoleForm } from "@/components/admin/roles/RoleForm"
-import { CustomPermissionForm } from "@/components/admin/roles/CustomPermissionForm"
-import { ModuleForm } from "@/components/admin/roles/ModuleForm"
+import { Button } from "../../components/ui/button"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs"
+import { AdminLayout } from "../../components/admin/layouts/AdminLayout"
+import { RolesList } from "../../components/admin/roles/RolesList"
+import { PermissionsMatrix } from "../../components/admin/roles/PermissionsMatrix"
+import { RoleForm } from "../../components/admin/roles/RoleForm"
+import { CustomPermissionForm } from "../../components/admin/roles/CustomPermissionForm"
+import { ModuleForm } from "../../components/admin/roles/ModuleForm"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -20,8 +20,9 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-} from "@/components/ui/alert-dialog"
-import type { Role, Permission, Module, RoleWithPermissions } from "@/types/role"
+} from "../../components/ui/alert-dialog"
+import type { Role, Permission, Module, RoleWithPermissions } from "../../types/role"
+
 
 const mockModules: Module[] = [
   {

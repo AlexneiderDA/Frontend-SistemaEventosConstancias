@@ -2,12 +2,17 @@
 
 import type React from "react"
 import { useState, useEffect } from "react"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Switch } from "@/components/ui/switch"
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../../ui/tabs"
+import { Button } from "../../ui/button"
+import { Input } from "../../ui/input"
+import { Label } from "../../ui/label"
+import { Textarea } from "../../ui/textarea"
+import { Switch } from "../../ui/switch"
 import {
   Select,
   SelectContent,
@@ -16,9 +21,10 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import { Card, CardContent } from "@/components/ui/card"
-import type { EmailTemplateFormData, EmailTemplateType } from "@/types/email-template"
+} from "../../ui/select"
+import { Card, CardContent } from "../../ui/card"
+import type { EmailTemplateFormData, EmailTemplateType } from "../../../types/email-template"
+
 
 interface TemplateEditorProps {
   initialData?: EmailTemplateFormData

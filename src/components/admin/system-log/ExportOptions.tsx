@@ -3,7 +3,7 @@
 import type React from "react"
 import { useState } from "react"
 import { Download, FileText, FileSpreadsheet, FileJson, Calendar } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Button } from "../../ui/button"
 import {
   Dialog,
   DialogContent,
@@ -12,11 +12,12 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Label } from "@/components/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Checkbox } from "@/components/ui/checkbox"
-import type { SystemLogFilter } from "@/types/system-log"
+} from "../../ui/dialog"
+import { Label } from "../../ui/label"
+import { RadioGroup, RadioGroupItem } from "../../ui/radio-group"
+import { Checkbox } from "../../ui/checkbox"
+import type { SystemLogFilter } from "../../../types/system-log"
+
 
 interface ExportOptionsProps {
   onExport: (format: string, includeDetails: boolean, dateRange: { from?: Date; to?: Date }) => void

@@ -1,8 +1,8 @@
 "use client"
 
 import type React from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import type { ReportCategory } from "@/types/report"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../ui/card"
+import type { ReportCategory } from "../../../types/report"
 import type { LucideIcon } from "lucide-react"
 import * as Icons from "lucide-react"
 

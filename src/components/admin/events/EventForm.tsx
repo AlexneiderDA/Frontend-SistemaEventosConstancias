@@ -9,13 +9,13 @@ import {
   DialogTitle,
   DialogFooter,
   DialogDescription,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Button } from "@/components/ui/button"
-import { Textarea } from "@/components/ui/textarea"
-import { Calendar } from "@/components/ui/calendar"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+} from "../../ui/dialog"
+import { Input } from "../../ui/input"
+import { Label } from "../../ui/label"
+import { Button } from "../../ui/button"
+import { Textarea } from "../../ui/textarea"
+import { Calendar } from "../../ui/calendar"
+import { Popover, PopoverContent, PopoverTrigger } from "../../ui/popover"
 import { CalendarIcon } from "lucide-react"
 import { format } from "date-fns"
 import { es } from "date-fns/locale"
@@ -27,10 +27,11 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import { Switch } from "@/components/ui/switch"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import type { Event, EventType, EventStatus, EventTag } from "@/types/event"
+} from "../../ui/select"
+import { Switch } from "../../ui/switch"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../ui/tabs"
+import type { Event, EventType, EventStatus, EventTag } from "../../../types/event"
+
 
 interface EventFormProps {
   isOpen: boolean

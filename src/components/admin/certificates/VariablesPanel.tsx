@@ -3,11 +3,22 @@
 import type React from "react"
 import { useState } from "react"
 import { Search, Info } from "lucide-react"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import type { CertificateVariable } from "@/types/certificate"
+import { Input } from "../../ui/input"
+import { Button } from "../../ui/button"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../../ui/accordion"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../../ui/tooltip"
+import type { CertificateVariable } from "../../../types/certificate"
+
 
 interface VariablesPanelProps {
   variables: CertificateVariable[]

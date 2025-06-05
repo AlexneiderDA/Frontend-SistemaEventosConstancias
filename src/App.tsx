@@ -18,11 +18,31 @@ import MisEventosPage from './pages/asistente/MisEventosPage';
 import MisConstanciasPage from './pages/asistente/MisConstancias';
 import MiPerfilPage from './pages/asistente/MiPerfilPage';
 
+// Páginas de administración
+import { Dashboard } from './pages/admin/Dashboard';
+import { Users } from './pages/admin/Users';
+import { Events } from './pages/admin/Events';
+import { Roles } from './pages/admin/Roles';
+import { CertificateTemplates } from './pages/admin/CertificateTemplates';
+import { EmailTemplates } from './pages/admin/EmailTemplates';
+import { Settings } from './pages/admin/Settings';
+import { SystemLog } from './pages/admin/SystemLog';
+
 function App() {
   return (
     <AuthProvider>
       <Routes>
-        {/* Rutas públicas (solo para usuarios no autenticados) */}
+        {<>
+                <Route path="/admin" element={<Dashboard/>}> </Route>
+                <Route path="/admin/users" element={<Users/>}> </Route>
+                <Route path="/admin/events" element={<Events/>}> </Route>
+                <Route path="/admin/roles" element={<Roles/>}> </Route>
+                <Route path="/admin/certificates" element={<CertificateTemplates/>}> </Route>
+                <Route path="/admin/email" element={<EmailTemplates/>}> </Route>
+                <Route path="/admin/settings" element={<Settings/>}> </Route>
+                <Route path="/admin/systemslog" element={<SystemLog/>}> </Route>
+
+              </>}
         <Route 
           path="/" 
           element={

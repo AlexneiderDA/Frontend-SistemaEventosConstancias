@@ -2,8 +2,8 @@
 
 import type React from "react"
 import { Eye, Clock, ArrowUpDown } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { Button } from "../../ui/button"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../../ui/table"
 import {
   Pagination,
   PaginationContent,
@@ -11,8 +11,9 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@/components/ui/pagination"
-import type { SystemLogEntry } from "@/types/system-log"
+} from "../../ui/pagination"
+import type { SystemLogEntry } from "../../../types/system-log"
+
 
 interface LogTableProps {
   logs: SystemLogEntry[]
@@ -170,8 +171,10 @@ export const LogTable: React.FC<LogTableProps> = ({
         <PaginationContent>
           <PaginationItem>
             <PaginationPrevious
-              onClick={() => onPageChange(Math.max(1, currentPage - 1))}
-              disabled={currentPage === 1}
+              onClick={currentPage === 1 ? undefined : () => onPageChange(Math.max(1, currentPage - 1))}
+              aria-disabled={currentPage === 1}
+              tabIndex={currentPage === 1 ? -1 : 0}
+              className={currentPage === 1 ? "pointer-events-none opacity-50" : ""}
             />
           </PaginationItem>
 
@@ -189,11 +192,12 @@ export const LogTable: React.FC<LogTableProps> = ({
               </PaginationItem>
             )
           })}
-
           <PaginationItem>
             <PaginationNext
-              onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
-              disabled={currentPage === totalPages}
+              onClick={currentPage === totalPages ? undefined : () => onPageChange(Math.min(totalPages, currentPage + 1))}
+              aria-disabled={currentPage === totalPages}
+              tabIndex={currentPage === totalPages ? -1 : 0}
+              className={currentPage === totalPages ? "pointer-events-none opacity-50" : ""}
             />
           </PaginationItem>
         </PaginationContent>

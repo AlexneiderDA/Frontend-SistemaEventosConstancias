@@ -2,9 +2,9 @@
 
 import type React from "react"
 import { ChevronRight, BarChart, LineChart, PieChart, Table, FileText } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import type { Report } from "@/types/report"
+import { Button } from "../../ui/button"
+import { ScrollArea } from "../../ui/scroll-area"
+import type { Report } from "../../../types/report"
 
 interface ReportSelectorProps {
   reports: Report[]

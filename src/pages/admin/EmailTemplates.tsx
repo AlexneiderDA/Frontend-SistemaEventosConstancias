@@ -2,20 +2,21 @@
 
 import type React from "react"
 import { useState } from "react"
-import { AdminLayout } from "@/components/admin/layouts/AdminLayout"
-import { TemplatesList } from "@/components/admin/email-templates/TemplatesList"
-import { TemplateEditor } from "@/components/admin/email-templates/TemplateEditor"
-import { VariablesPanel } from "@/components/admin/email-templates/VariablesPanel"
-import { TestEmailDialog } from "@/components/admin/email-templates/TestEmailDialog"
-import { DeleteTemplateDialog } from "@/components/admin/email-templates/DeleteTemplateDialog"
-import { Button } from "@/components/ui/button"
+import { AdminLayout } from "../../components/admin/layouts/AdminLayout"
+import { TemplatesList } from "../../components/admin/email-templates/TemplatesList"
+import { TemplateEditor } from "../../components/admin/email-templates/TemplateEditor"
+import { VariablesPanel } from "../../components/admin/email-templates/VariablesPanel"
+import { TestEmailDialog } from "../../components/admin/email-templates/TestEmailDialog"
+import { DeleteTemplateDialog } from "../../components/admin/email-templates/DeleteTemplateDialog"
+import { Button } from "../../components/ui/button"
 import { ArrowLeft, Send } from "lucide-react"
 import type {
   EmailTemplate,
   EmailTemplateFormData,
   EmailPreviewData,
   SendTestEmailResponse,
-} from "@/types/email-template"
+} from "../../types/email-template"
+
 
 // Resto del archivo permanece igual...
 const mockTemplates: EmailTemplate[] = [

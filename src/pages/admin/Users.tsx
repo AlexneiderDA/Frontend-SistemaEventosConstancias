@@ -1,16 +1,17 @@
 import type React from "react"
 import { useState } from "react"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Button } from "@/components/ui/button"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs"
+import { Button } from "../../components/ui/button"
 import { Plus, AlertTriangle } from "lucide-react"
-import { AdminLayout } from "@/components/admin/layouts/AdminLayout"
-import { UserFiltersComponent } from "@/components/admin/users/UserFilters"
-import { UserTable } from "@/components/admin/users/UserTable"
-import { UserForm } from "@/components/admin/users/UserForm"
-import { ResetPasswordDialog } from "@/components/admin/users/ResetPasswordDialog"
-import { RoleManagement } from "@/components/admin/users/RoleManagement"
-import { RoleForm } from "@/components/admin/users/RoleForm"
-import { ExportOptions } from "@/components/admin/users/ExportOptions"
+import { AdminLayout } from "../../components/admin/layouts/AdminLayout"
+import { UserFiltersComponent } from "../../components/admin/users/UserFilters"
+import { UserTable } from "../../components/admin/users/UserTable"
+import { UserForm } from "../../components/admin/users/UserForm"
+import { ResetPasswordDialog } from "../../components/admin/users/ResetPasswordDialog"
+import { RoleManagement } from "../../components/admin/users/RoleManagement"
+import { RoleForm } from "../../components/admin/users/RoleForm"
+import { ExportOptions } from "../../components/admin/users/ExportOptions"
+
 import {
   AlertDialog,
   AlertDialogAction,
@@ -20,8 +21,8 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-} from "@/components/ui/alert-dialog"
-import type { User, Role, Permission, UserFilters } from "@/types/user"
+} from "../../components/ui/alert-dialog"
+import type { User, Role, Permission, UserFilters } from "../../types/user"
 
 const mockUsers: User[] = [
   {

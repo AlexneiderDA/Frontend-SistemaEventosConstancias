@@ -2,12 +2,18 @@
 
 import type React from "react"
 import { Edit, Trash2, Copy, Shield, Clock } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import type { RoleWithPermissions } from "@/types/role"
+import { Card, CardContent } from "../../ui/card"
+import { Button } from "../../ui/button"
+import { Badge } from "../../ui/badge"
+import { ScrollArea } from "../../ui/scroll-area"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../../ui/tooltip"
+import type { RoleWithPermissions } from "../../../types/role"
+
 
 interface RolesListProps {
   roles: RoleWithPermissions[]

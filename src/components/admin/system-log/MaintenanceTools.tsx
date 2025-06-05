@@ -3,11 +3,11 @@
 import type React from "react"
 import { useState } from "react"
 import { Trash2, RefreshCw, Archive, AlertTriangle } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Button } from "../../ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../ui/card"
+import { Input } from "../../ui/input"
+import { Label } from "../../ui/label"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../../ui/select"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -17,8 +17,9 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-} from "@/components/ui/alert-dialog"
-import { Progress } from "@/components/ui/progress"
+} from "../../ui/alert-dialog"
+import { Progress } from "../../ui/progress"
+
 
 interface MaintenanceToolsProps {
   onPurgeOldLogs: (days: number) => Promise<void>

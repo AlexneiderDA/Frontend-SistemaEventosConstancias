@@ -1,9 +1,14 @@
 "use client"
-
 import type React from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "../../ui/card"
 import { Calendar, CheckCircle2, Clock, Users } from "lucide-react"
-import type { EventStats } from "@/types/event"
+import type { EventStats } from "../../../types/event"
+
 
 interface EventStatsProps {
   stats: EventStats

@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { Button } from "@/components/ui/button"
+import { Button } from "../../ui/button"
 import {
   Dialog,
   DialogContent,
@@ -9,8 +9,9 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog"
+} from "../../ui/dialog"
 import { AlertTriangle } from "lucide-react"
+
 
 interface DeleteTemplateDialogProps {
   isOpen: boolean
