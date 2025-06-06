@@ -18,6 +18,16 @@ import MisEventosPage from './pages/asistente/MisEventosPage';
 import MisConstanciasPage from './pages/asistente/MisConstancias';
 import MiPerfilPage from './pages/asistente/MiPerfilPage';
 
+//Paginas del organizador
+import {CreacionEvento} from './pages/organizador/CreacionEvento';
+import {DashboardOrganizador}from './pages/organizador/Dashboard';
+import { EmisionConstancias } from './pages/organizador/EmisionConstancias';
+import { GestionAsistentes } from './pages/organizador/GestionAsistencias';
+import { GestionEventos } from './pages/organizador/GestionEvento';
+import { GestionPersonal } from './pages/organizador/GestionPersonal';
+import { MetricasTiempoReal } from './pages/organizador/MetricasTiempoReal';
+import { Reportes } from './pages/organizador/Reportes';
+
 // Páginas de administración
 import { Dashboard } from './pages/admin/Dashboard';
 import { Users } from './pages/admin/Users';
@@ -41,6 +51,14 @@ function App() {
                 <Route path="/admin/email" element={<EmailTemplates/>}> </Route>
                 <Route path="/admin/settings" element={<Settings/>}> </Route>
                 <Route path="/admin/systemslog" element={<SystemLog/>}> </Route>
+                <Route path="/organizador/dashboard" element={<DashboardOrganizador/>}> </Route>
+                <Route path="/organizador/creacion-evento" element={<CreacionEvento/>}> </Route> 
+                <Route path="/organizador/gestion-eventos" element={<GestionEventos/>}> </Route>
+                <Route path="/organizador/gestion-asistentes" element={<GestionAsistentes/>}> </Route>
+                <Route path="/organizador/gestion-personal" element={<GestionPersonal/>}> </Route>
+                <Route path="/organizador/metricas-tiempo-real" element={<MetricasTiempoReal/>}> </Route> 
+                <Route path="/organizador/reportes" element={<Reportes/>}> </Route>
+                <Route path="/organizador/emision-constancias" element={<EmisionConstancias/>}> </Route>
 
               </>}
         <Route 
