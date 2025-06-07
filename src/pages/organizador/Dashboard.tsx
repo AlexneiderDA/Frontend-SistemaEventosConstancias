@@ -1,8 +1,9 @@
 import type React from "react"
 import { DashboardCard } from "../../components/organizador/DashboardCard"
 import { EventCard } from "../../components/organizador/EventCard"
+import {OrganizadorLayout} from "../../components/organizador/OrganizadorLayout"
 
-export const DashboardOrganizador: React.FC = () => {
+export const DashboardOrganizador : React.FC = () => {
   const stats = [
     {
       title: "Eventos Activos",
@@ -54,6 +55,8 @@ export const DashboardOrganizador: React.FC = () => {
   ]
 
   return (
+    <OrganizadorLayout title="Dashboard de Organizador">
+
     <div className="p-6 bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -131,5 +134,6 @@ export const DashboardOrganizador: React.FC = () => {
         </div>
       </div>
     </div>
+    </OrganizadorLayout>
   )
 }

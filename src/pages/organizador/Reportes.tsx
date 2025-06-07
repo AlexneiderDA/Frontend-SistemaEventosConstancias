@@ -2,6 +2,8 @@
 
 import type React from "react"
 import { useState } from "react"
+import {OrganizadorLayout} from "../../components/organizador/OrganizadorLayout"
+
 
 interface ReportConfig {
   type: string
@@ -93,6 +95,7 @@ export const Reportes: React.FC = () => {
   }
 
   return (
+    <OrganizadorLayout title="Reportes">
     <div className="p-6 bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -313,5 +316,6 @@ export const Reportes: React.FC = () => {
         </div>
       </div>
     </div>
+    </OrganizadorLayout>
   )
 }

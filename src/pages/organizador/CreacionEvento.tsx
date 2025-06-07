@@ -2,6 +2,7 @@
 
 import type React from "react"
 import { useState } from "react"
+import {OrganizadorLayout} from "../../components/organizador/OrganizadorLayout"
 
 interface EventForm {
   name: string
@@ -114,6 +115,7 @@ export const CreacionEvento: React.FC = () => {
   }
 
   return (
+    <OrganizadorLayout title="Crear Evento">
     <div className="p-6 bg-gray-50 min-h-screen">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
@@ -434,5 +436,6 @@ export const CreacionEvento: React.FC = () => {
         </div>
       </div>
     </div>
+    </OrganizadorLayout>
   )
 }

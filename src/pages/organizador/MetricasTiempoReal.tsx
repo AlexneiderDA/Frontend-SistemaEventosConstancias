@@ -2,6 +2,8 @@
 
 import type React from "react"
 import { useState, useEffect } from "react"
+import {OrganizadorLayout} from "../../components/organizador/OrganizadorLayout"
+
 
 interface MetricData {
   time: string
@@ -58,6 +60,7 @@ export const MetricasTiempoReal: React.FC = () => {
   const attendancePercentage = (metrics.currentAttendance / metrics.totalRegistered) * 100
 
   return (
+    <OrganizadorLayout title="Métricas en Tiempo Real">
     <div className="p-6 bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -244,5 +247,6 @@ export const MetricasTiempoReal: React.FC = () => {
         </div>
       </div>
     </div>
+    </OrganizadorLayout>
   )
 }

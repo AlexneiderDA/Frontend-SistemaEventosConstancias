@@ -2,6 +2,8 @@
 
 import type React from "react"
 import { useState } from "react"
+import {OrganizadorLayout} from "../../components/organizador/OrganizadorLayout"
+
 
 interface Auditor {
   id: number
@@ -108,6 +110,7 @@ export const GestionPersonal: React.FC = () => {
   }
 
   return (
+    <OrganizadorLayout title="Gestión de Personal de Apoyo">
     <div className="p-6 bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -407,5 +410,6 @@ export const GestionPersonal: React.FC = () => {
         )}
       </div>
     </div>
+    </OrganizadorLayout>
   )
 }

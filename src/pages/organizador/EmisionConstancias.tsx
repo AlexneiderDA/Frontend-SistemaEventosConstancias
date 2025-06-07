@@ -2,6 +2,8 @@
 
 import type React from "react"
 import { useState } from "react"
+import {OrganizadorLayout} from "../../components/organizador/OrganizadorLayout"
+
 
 interface Attendee {
   id: number
@@ -135,6 +137,8 @@ export const EmisionConstancias: React.FC = () => {
   }
 
   return (
+    <OrganizadorLayout title="Emisión de Constancias">
+
     <div className="p-6 bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -457,5 +461,6 @@ export const EmisionConstancias: React.FC = () => {
         )}
       </div>
     </div>
+    </OrganizadorLayout>
   )
 }

@@ -2,6 +2,8 @@
 
 import type React from "react"
 import { useState } from "react"
+import {OrganizadorLayout} from "../../components/organizador/OrganizadorLayout"
+
 
 interface Event {
   id: number
@@ -81,6 +83,7 @@ export const GestionEventos: React.FC = () => {
   })
 
   return (
+    <OrganizadorLayout title="Gestion de Evento">
     <div className="p-6 bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -238,5 +241,6 @@ export const GestionEventos: React.FC = () => {
         </div>
       </div>
     </div>
+    </OrganizadorLayout>
   )
 }
