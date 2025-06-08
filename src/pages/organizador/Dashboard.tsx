@@ -35,24 +35,7 @@ export const DashboardOrganizador : React.FC = () => {
     },
   ]
 
-  const upcomingEvents = [
-    {
-      title: "Conferencia de Tecnología 2024",
-      date: "15 Dic 2024, 9:00 AM",
-      location: "Auditorio Principal",
-      status: "upcoming" as const,
-      attendees: 85,
-      capacity: 100,
-    },
-    {
-      title: "Workshop de Desarrollo Web",
-      date: "18 Dic 2024, 2:00 PM",
-      location: "Sala de Conferencias A",
-      status: "active" as const,
-      attendees: 45,
-      capacity: 50,
-    },
-  ]
+  
 
   return (
     <OrganizadorLayout title="Dashboard de Organizador">
@@ -78,9 +61,7 @@ export const DashboardOrganizador : React.FC = () => {
             <div className="bg-white rounded-lg shadow-md p-6">
               <h2 className="text-xl font-semibold text-gray-900 mb-4">Eventos Próximos</h2>
               <div className="space-y-4">
-                {upcomingEvents.map((event, index) => (
-                  <EventCard key={index} {...event} />
-                ))}
+                
               </div>
               <button className="w-full mt-4 py-2 px-4 bg-[#1C8443] text-white rounded-lg hover:bg-[#41AD49] transition-colors">
                 Ver Todos los Eventos
