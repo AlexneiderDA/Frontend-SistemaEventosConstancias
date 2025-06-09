@@ -42,6 +42,8 @@ interface SidebarItemProps {
   href?: string
 }
 
+const sidebarRef = "/admin"
+
 const SidebarItem: React.FC<SidebarItemProps> = ({
   icon: Icon,
   label,
@@ -95,56 +97,56 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children, title }) => 
               label="Dashboard"
               isActive={title === "Dashboard"}
               isCollapsed={!isSidebarOpen}
-              href="/dashboard"
+              href={sidebarRef + "/"}
             />
             <SidebarItem
               icon={Users}
               label="Usuarios"
               isActive={title === "Usuarios"}
               isCollapsed={!isSidebarOpen}
-              href="/users"
+              href=  {sidebarRef+"/usuarios"}
             />
             <SidebarItem
               icon={FileText}
-              label="Reportes"
-              isActive={title === "Reportes"}
+              label="Roles"
+              isActive={title === "Roles"}
               isCollapsed={!isSidebarOpen}
-              href="/reports"
+              href= {sidebarRef+"/roles"}
             />
             <SidebarItem
               icon={Calendar}
               label="Eventos"
               isActive={title === "Eventos"}
               isCollapsed={!isSidebarOpen}
-              href="/events"
+              href= {sidebarRef+"/eventos"}
             />
             <SidebarItem
               icon={MessageSquare}
-              label="Mensajes"
-              isActive={title === "Mensajes"}
+              label="Constancias"
+              isActive={title === "Constancias"}
               isCollapsed={!isSidebarOpen}
-              href="/messages"
+              href= {sidebarRef+"/Constancias"}
             />
             <SidebarItem
               icon={Database}
-              label="Base de datos"
-              isActive={title === "Base de datos"}
+              label="Plantillas Correos"
+              isActive={title === "email templates"}
               isCollapsed={!isSidebarOpen}
-              href="/database"
+              href= {sidebarRef+"/email-templates"}
             />
             <SidebarItem
               icon={Server}
-              label="Servidores"
-              isActive={title === "Servidores"}
+              label="Logs"
+              isActive={title === "Systems logs"}
               isCollapsed={!isSidebarOpen}
-              href="/servers"
+              href= {sidebarRef+"/systems-log"}
             />
             <SidebarItem
               icon={Settings}
               label="Configuración"
               isActive={title === "Configuración"}
               isCollapsed={!isSidebarOpen}
-              href="/settings"
+              href= {sidebarRef+"/configuracion"}
             />
           </nav>
         </div>

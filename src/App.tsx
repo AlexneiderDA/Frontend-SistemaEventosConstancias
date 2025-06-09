@@ -44,15 +44,15 @@ function App() {
       <Routes>
         {<>
                 <Route path="/admin" element={<Dashboard/>}> </Route>
-                <Route path="/admin/users" element={<Users/>}> </Route>
-                <Route path="/admin/events" element={<Events/>}> </Route>
+                <Route path="/admin/usuarios" element={<Users/>}> </Route>
+                <Route path="/admin/eventos" element={<Events/>}> </Route>
                 <Route path="/admin/roles" element={<Roles/>}> </Route>
-                <Route path="/admin/certificates" element={<CertificateTemplates/>}> </Route>
-                <Route path="/admin/email" element={<EmailTemplates/>}> </Route>
-                <Route path="/admin/settings" element={<Settings/>}> </Route>
-                <Route path="/admin/systemslog" element={<SystemLog/>}> </Route>
+                <Route path="/admin/constancias" element={<CertificateTemplates/>}> </Route>
+                <Route path="/admin/email-templates" element={<EmailTemplates/>}> </Route>
+                <Route path="/admin/configuracion" element={<Settings/>}> </Route>
+                <Route path="/admin/systems-log" element={<SystemLog/>}> </Route>
                 <Route path="/organizador/dashboard" element={<DashboardOrganizador/>}> </Route>
-                <Route path="/organizador/creacion-evento" element={<CreacionEvento/>}> </Route> 
+                <Route path="/organizador/crear-evento" element={<CreacionEvento/>}> </Route> 
                 <Route path="/organizador/gestion-eventos" element={<GestionEventos/>}> </Route>
                 <Route path="/organizador/gestion-asistentes" element={<GestionAsistentes/>}> </Route>
                 <Route path="/organizador/gestion-personal" element={<GestionPersonal/>}> </Route>

@@ -42,6 +42,7 @@ interface SidebarItemProps {
   href?: string
 }
 
+const sidebarRef = "/organizador"
 const SidebarItem: React.FC<SidebarItemProps> = ({
   icon: Icon,
   label,
@@ -95,56 +96,56 @@ export const OrganizadorLayout: React.FC<OranizadorLayoutProps> = ({ children, t
               label="Dashboard"
               isActive={title === "Dashboard"}
               isCollapsed={!isSidebarOpen}
-              href="/dashboard"
+              href= {sidebarRef + "/"}
             />
             <SidebarItem
               icon={CalendarPlus}
               label="Crear evento"
               isActive={title === "UCrear evento"}
               isCollapsed={!isSidebarOpen}
-              href="/users"
+              href= {sidebarRef + "/crear-evento"}
             />
             <SidebarItem
               icon={CalendarCog}
               label="Gestion evento"
               isActive={title === "Gestion evento"}
               isCollapsed={!isSidebarOpen}
-              href="/reports"
+              href= {sidebarRef + "/gestion-eventos"}
             />
             <SidebarItem
               icon={UserRound}
               label="Gestion asistencias"
               isActive={title === "Gestion asistencias"}
               isCollapsed={!isSidebarOpen}
-              href="/events"
+              href= {sidebarRef + "/gestion-asistentes"}
             />
             <SidebarItem
               icon={RulerDimensionLine}
               label="Metricas tiempo real"
               isActive={title === "Metricas tiempo real"}
               isCollapsed={!isSidebarOpen}
-              href="/messages"
+              href= {sidebarRef + "/metricas-tiempo-real"}
             />
             <SidebarItem
               icon={FileUser}
               label="Emision constancias"
               isActive={title === "Emision constancias"}
               isCollapsed={!isSidebarOpen}
-              href="/database"
+              href= {sidebarRef + "/emisiones-constancias"}
             />
             <SidebarItem
               icon={BookUser}
               label="Gestion personal"
               isActive={title === "Gestion personal"}
               isCollapsed={!isSidebarOpen}
-              href="/servers"
+              href= {sidebarRef + "/gestion-personal"}
             />
             <SidebarItem
               icon={FileText}
               label="Reportes"
               isActive={title === "Reportes"}
               isCollapsed={!isSidebarOpen}
-              href="/settings"
+              href= {sidebarRef + "/reportes"}
             />
           </nav>
         </div>
