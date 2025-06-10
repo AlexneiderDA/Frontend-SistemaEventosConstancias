@@ -8,10 +8,12 @@ import CambioContrasena from "../../components/asistente/perfil/CambioContrasena
 import ActualizarCorreo from "../../components/asistente/perfil/ActualizarCorreo"
 import PreferenciasNotificaciones from "../../components/asistente/perfil/PreferenciasNotificaciones"
 import HistorialActividad from "../../components/asistente/perfil/HistorialActividad"
+import CodigoQR from "../../components/asistente/perfil/CodigoQr"
 
 const MiPerfilPage: React.FC = () => {
   // Datos simulados del usuario
   const [datosUsuario] = useState({
+    id: "USR-2024-001234", // ID estático para ejemplo
     nombre: "Juan",
     apellido: "Pérez",
     correo: "juan.perez@ejemplo.com",
@@ -106,6 +108,12 @@ const MiPerfilPage: React.FC = () => {
 
           {/* Columna derecha */}
           <div className="space-y-6">
+            {/* Código QR */}
+            <CodigoQR 
+              userId={datosUsuario.id}
+              userName={`${datosUsuario.nombre} ${datosUsuario.apellido}`}
+            />
+
             {/* Actualizar correo */}
             <ActualizarCorreo correoActual={datosUsuario.correo} onActualizarCorreo={handleActualizarCorreo} />
 
